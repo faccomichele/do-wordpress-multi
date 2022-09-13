@@ -4,7 +4,6 @@
     name: 
     - mariadb-server
     - php-mysql
-    - phpmyadmin
     state: present
 
 - name: Restart Apache

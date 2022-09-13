@@ -1,7 +1,7 @@
 ---
 - name: Download the latest version of Wordpress
-  ansible.builtin.copy:
-    src: http://wordpress.org/latest.tar.gz
+  ansible.builtin.get_url:
+    url: http://wordpress.org/latest.tar.gz
     dest: /tmp/wdlatest.tar.gz
 
 - name: Extract it
