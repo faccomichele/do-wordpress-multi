@@ -1,0 +1,1 @@
+mysql_random_password: "{{ lookup('password', '/tmp/mysql_password chars=ascii_letters') }}"

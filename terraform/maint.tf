@@ -19,10 +19,12 @@ resource "digitalocean_droplet" "wordpress" {
   ssh_keys = [ "e9:fb:ec:94:a8:b4:d8:be:81:f1:14:49:4a:f4:77:92" ]
   user_data = <<USERDATA
 WORKING_DIR=/tmp/user-data-exec
-apt-get update && apt-get upgrade && apt-get install git
+mkdir -p $WORKING_DIR
+apt-get update && apt-get upgrade -y && apt-get install -y git ansible
 cd $WORKING_DIR
 git clone https://github.com/faccomichele/do-wordpress-multi.git
-cd do-workpress-multi/ansible
+cd do-wordpress-multi/ansible
+ansible-playbook playbook.yml
 USERDATA
 
 }
