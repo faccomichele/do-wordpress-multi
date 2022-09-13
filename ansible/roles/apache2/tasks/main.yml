@@ -9,5 +9,5 @@
 - name: Start Apache
   ansible.builtin.service:
     name: apache2
-    state: running
+    state: started
     enabled: yes

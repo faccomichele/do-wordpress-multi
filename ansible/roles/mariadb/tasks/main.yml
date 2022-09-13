@@ -3,7 +3,7 @@
   ansible.builtin.apt:
     name: 
     - mariadb-server
-    - php5-mysql
+    - php-mysql
     - phpmyadmin
     state: present
 
@@ -12,8 +12,8 @@
     name: apache2
     state: restarted
 
-- name: Active MariaDB server
-  ansible.builtin.shell: sudo mysql_install_db
+# - name: Activate MariaDB server
+#   ansible.builtin.shell: sudo mysql_install_db
 
 # - name: Start Mysql Service
 #   service: name=mysql state=started enabled=true
